@@ -1,0 +1,70 @@
+html,
+body {
+  /* width: 100vh; */
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+#image {
+  /* width: 1000px;
+  height: 1000px; */
+  /* width: 9728px;
+  height: 5288px; */
+
+  height: 100%;
+  width: 100%; 
+  background: url('images/21Whole_world_-_land_and_oceans_12000.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+  /* background-position: center; */
+}
+.hotspot {
+  position: absolute;
+  z-index: 1;
+  background: white;
+  cursor: pointer;
+  display: inline-block;
+}
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  z-index: 999;
+  width: 40%;
+  height: 70%;
+}
+.popup img {
+  max-width: 100%;
+  height: auto;
+}
+#popup_Anaheim {
+  width: 40%;
+  height: 70%;
+  background-color: red;
+  background-repeat: no-repeat;
+  background-position: right;
+  z-index: 999;
+}
+#contButton {
+  z-index: 999;
+  display: none;
+  position: fixed;
+  position: fixed;
+  top: 50%; 
+  right: 20px;
+  transform: translateY(-50%);
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+#contButton:hover {
+  background-color: red;
+}
