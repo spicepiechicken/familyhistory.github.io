@@ -13,7 +13,7 @@ body {
 
   height: 100%;
   width: 100%; 
-  background: url('images/21Whole_world_-_land_and_oceans_12000.png');
+  background: url('images/2Whole_world_-_land_and_oceans_12000.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left;
@@ -22,7 +22,7 @@ body {
 .hotspot {
   position: absolute;
   z-index: 1;
-  background: white;
+  background: red;
   cursor: pointer;
   display: inline-block;
 }
