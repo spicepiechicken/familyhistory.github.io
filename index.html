@@ -48,15 +48,15 @@
         // var clickedHotspots = {}; // Keep track of how many times each hotspot has been clicked
         var hotspots = [{
                 id: 'Pyongyang',
-                x: 550,
+                x: 250,
                 y: 665,
                 height: 70,
                 width: 70,
                 numClicks: 0
             }, { 
                 id: 'Seoul',
-                x: 500,
-                y: 500,
+                x: 250,
+                y: 800,
                 height: 50,
                 width: 50,
                 numClicks: 0
@@ -156,6 +156,7 @@
                 // next slide is Seoul
                 $('#popup_' + slides[1]).show();
             } else if (slides[slideIndex] == 'Anaheim') {
+                $('#popup_' + slides[slideIndex]).show();
                 anaheim();
             } else {
                 // go to next slide
@@ -165,6 +166,8 @@
             slideIndex++; 
             console.log("Slide index: " + slideIndex);
         });
+
+        //Moving to california changes the backgound image
         var anaheim = function() {
             // Set new background image
             var imgURL = "images/CA_Anaheim_287970_1965_24000_geo.png";
@@ -177,10 +180,11 @@
             // hide all old hotspots
             $('.hotspot').each(function() {
                 $(this).css({
-                        display: none
+                    display: 'none'
                 });
             });
         };
+
 
     </script>
 </body>
