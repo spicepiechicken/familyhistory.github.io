@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles2.css"> 
 </head>
 <body>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <div id='image'></div>
         <!-- Hidden popup divs for each hotspot -->
-        <div id="popup_Pyongyang" class="popup">
-            <h3>Pyongyang 1910-1940</h3>
+        <div id="popup_DowntownA" class="popup">
+            <h3>Downtown Anaheim</h3>
             <p>This is where harabaji grew up</p>
             <img src="" alt="">
         </div>
-        <div id="popup_Seoul" class="popup">
-            <h3>Seoul 1920</h3>
+        <div id="popup_Katella" class="popup">
+            <h3>Katella High School</h3>
             <p>Halmoni childhood</p>
             <img src="" alt="">
         </div>
-        <div id="popup_Busan" class="popup">
-            <h3>Busan 1940</h3>
+        <div id="popup_Church" class="popup">
+            <h3>Church</h3>
             <p>everybody fled here</p>
             <img src="" alt="">
         </div>
-        <div id="popup_CA" class="popup">
-            <h3>Moving to California!</h3>
+        <div id="popup_EastA" class="popup">
+            <h3>East Anaheim</h3>
             <p>made the decision to ... </p>
             <img src="" alt="">
         </div>
-        <div id="popup_Anaheim" class="popup">
+        <div id="pop_Disneyland" class="popup">
             <h3>Welcome to Anaheim</h3>
             <p>made the decision to ... </p>
             <img src="" alt="">
@@ -35,24 +35,32 @@
         <button id="contButton">Continue</button>
 
     <script>
-        var slides = ['Pyongyang', 'Seoul', 'Busan', 'CA','Anaheim', 'DowntownA', 
-                        'EastA'];
+        var slides = ['DowntownA', 'Katella', 'Church', 'EastA', 'Disneyland'];
         var slideIndex = 0;
-        var imageWidth = 1902;
-        var imageHeight = 1034;
+        // var imageWidth = 100;
+        // var imageHeight = 100;
+        var imageWidth = 3000;
+        var imageHeight = 1631;
         var aspectRatio = imageWidth / imageHeight;
         var zoomed = false;
         var hotspotId = "";
         // var clickedHotspots = {}; // Keep track of how many times each hotspot has been clicked
         var hotspots = [{
-                id: 'Pyongyang',
+                id: 'DowntownA',
                 x: 250,
                 y: 665,
                 height: 70,
                 width: 70,
                 numClicks: 0
             }, { 
-                id: 'Seoul',
+                id: 'Katella',
+                x: 250,
+                y: 800,
+                height: 50,
+                width: 50,
+                numClicks: 0
+            }, {
+                id: 'Church',
                 x: 250,
                 y: 800,
                 height: 50,
@@ -154,9 +162,7 @@
                 // next slide is Seoul
                 $('#popup_' + slides[1]).show();
             } else if (slides[slideIndex] == 'Anaheim') {
-                anaheim();
-                $('#popup_' + slides[slideIndex]).show();
-                // window.location.href = 'california.html';
+                window.location.href = 'california.html';
             } else {
                 // go to next slide
                 console.log("here");
@@ -165,25 +171,6 @@
             slideIndex++; 
             console.log("Slide index: " + slideIndex);
         });
-
-        //Moving to california changes the backgound image
-        var anaheim = function() {
-            // Set new background image
-            var imgURL = "images/CA_Anaheim_287970_1965_24000_geo.png";
-            // reset background scale and background align
-            $('#image').css({
-                "background-image": "url(" + imgURL +")",
-                "background-position": "right",
-                'transform': 'scale(1)' 
-            });
-            // hide all old hotspots
-            // $('.hotspot').each(function() {
-            //     $(this).css({
-            //         'display': 'none'
-            //     });
-            // });
-            $('.hotspot').hide(); //TODO:: doesn't completely make the hotspots go away, shows up again when you resize window
-        };
 
     </script>
 </body>

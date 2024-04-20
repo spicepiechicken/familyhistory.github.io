@@ -1,23 +1,16 @@
 html,
 body {
-  /* width: 100vh; */
   height: 100%;
   padding: 0;
   margin: 0;
 }
 #image {
-  /* width: 1000px;
-  height: 1000px; */
-  /* width: 9728px;
-  height: 5288px; */
-
   height: 100%;
   width: 100%; 
-  background: url('images/3Whole_world.png');
+  background: url('images/CA_Anaheim_287970_1965_24000_geo.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left;
-  /* background-position: center; */
 }
 .hotspot {
   position: absolute;
@@ -41,14 +34,6 @@ body {
 .popup img {
   max-width: 100%;
   height: auto;
-}
-#popup_Anaheim {
-  width: 40%;
-  height: 70%;
-  background-color: red;
-  background-repeat: no-repeat;
-  background-position: right;
-  z-index: 999;
 }
 #contButton {
   z-index: 999;
