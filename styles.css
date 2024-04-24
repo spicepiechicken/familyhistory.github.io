@@ -4,6 +4,142 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
+
+  /* font-family: "Playfair Display", serif; */
+  /* font-family: "Source Serif 4", serif; */
+  font-family: "Libre Bodoni", serif;
+  font-optical-sizing: auto;
+  /* font-weight: <weight>; */
+  font-style: normal;
+}
+.bodies {
+  position: relative;
+  color: white;
+  /* overflow-y: auto; */
+}
+#seoulBody{
+  padding: 2%;
+}
+#busanBody{
+  padding: 4%;
+}
+#busanTitle{
+  /* animation: wiggle 7s ease-in-out infinite; */
+  padding: 4%;
+  left: -15%;
+  top: 7%;
+  z-index: 1;
+}
+#postWarTitle{
+  /* animation: wiggle 7s ease-in-out infinite; */
+  padding: 4%;
+  left: -15%;
+  top: 7%;
+  z-index: 1;
+}
+.titles{
+  position: relative;
+}
+  /* popup headings */
+h3 { 
+  font-size: 50px;
+  font-weight: bold;
+  margin: 0.1em;
+  color: white;
+  display: inline;
+  position: absolute;  
+  top: 5%;
+  left: 20%;
+  /* animation: wiggleLess 5s ease infinite; */
+}
+  /* popup subheadings */
+h2 {
+  font-style: italic;
+  font-size: 1.1em;
+  position: absolute;
+  margin: 1em;
+  padding-left: 10px;
+  top: 50%;
+  left: 20%;
+  /* display: inline; */
+}
+.popupParagraphs {
+  position: absolute;
+  filter: drop-shadow(black .2rem .15rem 3px);
+  z-index: 1;
+  font-size: 1.1rem;
+  color: white;
+  animation: wiggleLess 6s ease-in-out infinite;
+}
+#seoul1 {
+  width: 20%;
+  padding-left: 50%;
+  top: 0%;
+  /* animation: wiggleLess 6s ease-in-out infinite; */
+}
+#py1 {
+  position: fixed;
+  width: 20%;
+  padding-left: 45%;
+  top: 27%;
+}
+#py2 {
+  position: fixed;
+  width: 20%;
+  padding-left: 10%;
+  top: 80%;
+}
+#py3 {
+  position: fixed;
+  width: 20%;
+  padding-left: 50%;
+  top: 110%;
+  padding-bottom: 10%;
+}
+#busan1 {
+  position: fixed;
+  width: 20%;
+  left: 20%;
+  top: 50%;
+}
+#busan2 {
+  position: fixed;
+  width: 20%;
+  right: 20%;
+  top: 110%;
+  z-index: 1;
+}
+#postWarTitle {
+  left: -10%;
+}
+#pwar1 {
+  position: fixed;
+  width: 20%;
+  right: 15%;
+  top: 50%;
+  z-index: 1;
+}
+#pwar2 {
+  position: fixed;
+  width: 20%;
+  left: 13%;
+  top: 75%;
+  z-index: 1;
+}
+#pwar3 {
+  position: fixed;
+  width: 20%;
+  right: 20%;
+  top: 140%;
+  z-index: 1;
+}
+#CA1 {
+  position: fixed;
+  width: 20%;
+  left: 17%;
+  top: 30%;
+  z-index: 1;
+  text-align: right;
 }
 #image {
   /* width: 1000px;
@@ -36,6 +172,15 @@ body {
   animation-iteration-count: infinite, infinite; 
   animation-timing-function: ease;
 }
+.hotspot.hotspotC2 {
+  animation-name: hotspotClick2, scaleBounce; 
+  animation-duration: 4s, 1s;
+  animation-iteration-count: infinite, infinite; 
+  animation-timing-function: ease;
+}
+.hotspot.hotspotA {
+  background: orange;
+}
 @keyframes hotspotClick {
   0% {
     background-color: #d4adab;
@@ -47,19 +192,35 @@ body {
     background-color: #d4adab;
   }
   }
+@keyframes hotspotClick2 {
+  0% {
+    background-color: aquamarine;
+    }
+  50% {
+    background-color: teal;
+  }
+  100% {
+    background-color:  aquamarine;
+  }
+  }
 .popup {
   display: none;
   position: fixed;
-  top: 50%;
-  left: 50%;
+  top: 55%;
+  left: 57%;
   transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px;
+  background-color: none;
+  padding: 50px;
   z-index: 999;
-  width: 40%;
-  height: 70%;
+  width: 90%;
+  height: 90%;
   opacity: 0;
   transition: opacity 0.5s ease-in;
+  color: white;
+  margin: 0em;
+  overflow-y: auto;
+  /* pointer-events: none;  */
+  /* transition: transform 0.1s ease-in-out; */
 }
 .popup.visible {
   display: block;
@@ -72,20 +233,131 @@ body {
 #popup_Anaheim {
   width: 40%;
   height: 70%;
-  background-color: red;
+  background-color: none;
   background-repeat: no-repeat;
   background-position: right;
   z-index: 999;
   /* opacity: 100; */
   /* display: block; */
+  color: black;
 }
+#anaheimh3 {
+  color: aquamarine;
+  filter: drop-shadow(black .2rem .15rem 3px);
+}
+#seoul1IMG {
+  display: inline;
+  height: 55vh;
+  top: 35%;
+  opacity: 100%;
+  left: 13%;
+  position: relative;
+  z-index: -1;
+  padding-bottom: 5%;
+  /* animation: wiggle 9s ease-in-out infinite; */
+}
+#seoul2IMG {
+  height: 30%;
+  position: relative;
+  left: 10%;
+  top: 0%;
+  z-index: -1;
+  display: inline;
+}
+#pyIMG1 {
+  height: 100%;
+  position: fixed;
+  left: 30%;
+  top: 40%;
+  z-index: -1;
+}
+/* harabaji picture */
+#pyIMG2 {
+  height: 30%;
+  position: relative;
+  left: 8%;
+  top: 0%;
+  z-index: -1;
+  display: inline;
+}
+#busan1IMG {
+  position: fixed;
+  width: 50%;
+  right: 10%;
+  top: 16%;
+}
+#busan2IMG {
+  width: 50%;  
+  position: fixed;
+  left: 10%;
+  top: 80%;
+  padding-bottom: 5%;
+}
+#pwar1IMG {
+  position: fixed;
+  width: 40%;
+  right: 30%;
+  top: 20%;
+}
+#pwar2IMG {
+  height: 70%;  
+  position: fixed;
+  right: 15%;
+  top: 70%;
+  padding-bottom: 5%;
+}
+#pwar3IMG {
+  width: 50%;  
+  position: fixed;
+  left: 10%;
+  top: 110%;
+  padding-bottom: 5%;
+}
+#CA1IMG {
+  position: fixed;
+  width: 40%;
+  left: 30%;
+  top: 16%;
+}
+#CA2IMG {
+  width: 30%;  
+  position: fixed;
+  right: 60%;
+  top: 70%;
+  padding-bottom: 5%;
+  z-index: -1;
+}
+@keyframes wiggle {
+  0% {
+    transform: translate(0%, 0%);
+    }
+  50% {
+    transform: translate(-7%, -1%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+
+  @keyframes wiggleLess {
+    0% {
+      transform: translate(0%, 0%);
+      }
+    50% {
+      transform: translate(1%, -5%);
+    }
+    100% {
+      transform: translate(0%, 0%);
+    }
+    }
+
 #contButton {
   z-index: 999;
   display: none;
   position: fixed;
   position: fixed;
   top: 50%; 
-  right: 20px;
+  right: 4%;
   transform: translateY(-50%);
   background-color: transparent; 
   color: white;
@@ -94,6 +366,7 @@ body {
   cursor: pointer;
   border-radius: 5px;
   border: 2px solid white;
+  font-family: "Libre Bodoni", serif;
 }
 #contButton:hover {
   background-color: white;

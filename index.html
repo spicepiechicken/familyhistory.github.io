@@ -1,271 +1,48 @@
+
+
+
+
+
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" href="styles.css"> 
-</head>
-<body>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <div id='image'></div>
-        <!-- Hidden popup divs for each hotspot -->
-        <div id="popup_Pyongyang" class="popup">
-            <h3>Pyongyang 1910-1940</h3>
-            <p>This is where harabaji grew up</p>
-            <img src="" alt="">
-        </div>
-        <div id="popup_Seoul" class="popup">
-            <h3>Seoul 1920</h3>
-            <p>Halmoni childhood</p>
-            <img src="" alt="">
-        </div>
-        <div id="popup_Busan" class="popup">
-            <h3>Busan 1940</h3>
-            <p>everybody fled here</p>
-            <img src="" alt="">
-        </div>
-        <div id="popup_CA" class="popup">
-            <h3>Moving to California!</h3>
-            <p>made the decision to ... </p>
-            <img src="" alt="">
-        </div>
-        <div id="popup_Anaheim" class="popup">
-            <h3>Welcome to Anaheim</h3>
-            <p>made the decision to ... </p>
-            <img src="" alt="">
-        </div>
-        <button id="contButton">Continue</button>
+        <head>
+                <title>Song Family History</title>
 
-        <div id="airplane">
-        </div>
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
 
-    <script>
-        var slides = ['Pyongyang', 'Seoul', 'Busan', 'CA','Anaheim', 'DowntownA', 
-                        'EastA'];
-        var slideIndex = 0;
-        var imageWidth = 1902;
-        var imageHeight = 1034;
-        var aspectRatio = imageWidth / imageHeight;
-        var zoomed = false;
-        var hotspotId = "";
-        var Hx, Hy = 0; // used to zoom in on hotspots and zoom back out 
-                        // when background changes to Anaheim
-        // var clickedHotspots = {}; // Keep track of how many times each hotspot has been clicked
-        var hotspots = [{
-                id: 'Pyongyang',
-                x: 175,
-                y: 480,
-                height: 20,
-                width: 20,
-                numClicks: 0
-            }, { 
-                id: 'Seoul',
-                x: 185,
-                y: 503,
-                height: 20,
-                width: 20,
-                numClicks: 0
-            }
-        ];
-        $(window).resize(function() {
-            positionHotSpots();
-        });
-        var positionHotSpots = function() {
-            $('.hotspot').remove();
-            var wi = 0,
-                hi = 0;
-            var r = $('#image').width() / $('#image').height();
-            if (aspectRatio <= r) {
-                wi = $('#image').width();
-                hi = $('#image').width() / aspectRatio;
-            } else {
-                wi = $('#image').height() * aspectRatio;
-                hi = $('#image').height();
-            }
-            var offsetTop = (hi - $('#image').height()) / 2;
-            var offsetLeft = (wi - $('#image').width()) / 2;
-            $.each(hotspots, function(i, h) {
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Honk&family=Poor+Story&display=swap" rel="stylesheet">
 
-                var x = (wi * h.x) / imageWidth;
-                var y = (hi * h.y) / imageHeight;
+                <link rel="stylesheet" href="reset.css">  
+                <link rel="stylesheet" href="styles2.css"> 
 
-                var ww = (wi * (h.width)) / imageWidth;
-                var hh = (hi * (h.height)) / imageHeight;
-
-                var hotspot = $('<div>').attr('id', h.id).addClass('hotspot').css({
-                    top: y - offsetTop,
-                    left: x - offsetLeft,
-                    height: hh,
-                    width: ww
+        </head>
+        <body>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                <p>When America chose to use Korea as its battleground for fighting communism, it
+                affected millions of lives and created a perpetual link between the two countries. Koreans were
+                forever brought into the American political sphere and subsequently exposed to the culture and
+                ideals of the United States. Many immigrated to America, only to face race-based violence but
+                also to create beautiful communities and purpose here.<br><br>
+                <!-- Within Korean culture it is common to reduce one's struggles under the guise of being
+                grateful for the opportunities that one has. The model minority myth tells us that the most
+                important thing to do keep our head down, work hard, and with that we will be able to break
+                through barriers and achieve economic success.<br><br>
+                However, in the suppression of our hardships, our stories also get lost. -->
+                 This is my attempt at
+                exposing the historical context within which my family exists, to create a better
+                understanding of white supremacy and Asian stereotypes within the American context 
+                by demonstrating how they effect
+                individuals. 
+                </p>
+                <button id="contButton">Continue</button>
+        <script>
+                $('#contButton').click(function() {
+                        window.location.href = "experience.html";
                 });
-                $('body').append(hotspot);
-            });
-
-                // CLICKING ON HOTSPOTS AND ZOOMING IN
-                $('.hotspot').click(function() {
-                hotspotId = $(this).attr('id');
-                // var clickedHotspot = hotspots.find(function(hotspot) {
-                //         return hotspot.id === hotspotId;
-                // });
-                if (!zoomed) {
-                        zoomed = true;
-                        zoomToHotspot(hotspotId);
-                } else {
-                    slideIndex = slides.indexOf(hotspotId); // get & store curr slide index TODO:: do I need this?
-                    console.log(slideIndex);
-                    $('.popup').hide(); //close curr popup
-                    $('#contButton').show(); // show the continue button
-                    changeHotspotColor(hotspotId);
-                    showSlide('popup_' + hotspotId);
-                    // clickedHotspot.numClicks++; this was for showing and hiding hotspots, but i don't think i want this anymore
-                    // if (clickedHotspot.numClicks % 2 !== 0) {
-                    //     showSlide('popup_' + hotspotId);
-                    // }
-                }
-            });
-        };
-
-        var zoomToHotspot = function(hotspotId) {
-            var hotspot = $('#' + hotspotId);
-            var Hx = hotspot.position().left + hotspot.width() / 2.5;
-            var Hy = hotspot.position().top + hotspot.height() / 2.5;
-
-            $('#image').css({
-                'transform-origin': Hx + 'px ' + Hy + 'px',
-                'transform': 'scale(2)'
-            });
-            // Adjust the position of hotspots after zoom
-            $('.hotspot').each(function() {
-                var newX = ($(this).position().left - Hx) * 2.5 + Hx + 13;
-                var newY = ($(this).position().top - Hy) * 2.5 + Hy + 20;
-                var newWidth = $(this).width() * 2;
-                var newHeight = $(this).height() * 2;
-                $(this).css({
-                        left: newX,
-                        top: newY,
-                        width: newWidth,
-                        height: newHeight,
-                        filter: 'blur(10px)'
-                });
-            });
-        };
-        positionHotSpots();
-
-        // Fade in and out
-        function showSlide(slideId) {
-            //Fade in popup
-            $('#' + slideId).fadeIn().css('opacity', '100');
-            $('#' + slideId).addClass('visible');
-            // $('#' + hotspotId).addClass('show');
-        }
-        function hideSlide(slideId) {
-            //Fade out popup
-            $('#' + slideId).fadeOut(); 
-        }
-
-        // Continue button
-        $('#contButton').click(function() {
-            $('.popup').hide(); //hide curr popup if there is one
-            // $('#contButton').show();
-            if(slides[slideIndex] == 'Seoul') {
-                // next slide is Pyongyang
-                showSlide('popup_Pyongyang'); 
-                changeHotspotColor('Pyongyang');
-                // $('#' + popup_Seoul).addClass('show');
-                // $('#popup_' + slides[0]).show();
-            } else if (slides[slideIndex] == 'Pyongyang') {
-                // next slide is Seoul
-                showSlide('popup_Seoul'); 
-                changeHotspotColor('Pyongyang');
-                // $('#popup_' + slides[1]).show();
-            } else if (slides[slideIndex] == 'Busan'){
-                busan();
-                showSlide('popup_Busan'); 
-            } else if (slides[slideIndex] == 'CA'){
-                animate2CA();
-                showSlide('popup_CA');
-            } else if (slides[slideIndex] == 'Anaheim') {
-                changeHotspotColor(slides[slideIndex]);
-                anaheim();
-                showSlide('popup_' + slides[slideIndex]); 
-                // $('#popup_' + slides[slideIndex]).show();
-                // window.location.href = 'california.html';
-            } else {
-                // go to next slide
-                changeHotspotColor(slides[slideIndex]);
-                showSlide('popup_' + slides[slideIndex]); 
-                // $('#popup_' + slides[slideIndex]).show();
-            }
-            slideIndex++; 
-        });
-
-    var animate2CA = function() {
-        $('.hotspot').hide();
-
-        //move bg image
-        //set transition property to animate transform changes
-        $('#image').css('transition', 'transform 3s ease-in-out');
-        //move viewport to the rightmost part of the background image
-        var viewportWidth = $(window).width();
-        $('#image').css('transform', 'translateX(' + (- (viewportWidth * .77)) + 'px) scale(2)');       
-
-        //animate airplane
-        $('#airplane').show();
-        $('#airplane').css('transition', 'transform 3s ease-in-out');
-        //move viewport to the rightmost part of the background image
-        var viewportWidth = $(window).width();
-        var viewportHeight = $(window).height();
-        $('#airplane').css('transform', 'translateX(' + (viewportWidth / 1.3) + 'px) translateY(' + (viewportHeight * .07) + 'px)');      
-        // show hotspot after animation is finished
-            setTimeout(function() {
-                $('.hotspot').show();
-                // Move the hotspots to their desired position
-                $('.hotspot').each(function() {
-                    $(this).css({
-                        left: 1280,
-                        top: 400
-                    });
-                });
-                $('#airplane').hide();
-            }, 2950); 
-       
-    };
-
-    // Move the hotspots to Busan
-    var busan = function() {
-        $('.hotspot').each(function() {
-            $(this).css({
-                    left: 170,
-                    top: 390
-            });
-        });
-    }
-
-        var changeHotspotColor = function(hotHotspot) {
-            $('.hotspot').removeClass('hotspotC'); // Remove .hotspotC from all hotspots
-
-            var ogLeft = $('#' + hotHotspot).css('left');
-            var ogTop = $('#' + hotHotspot).css('top');
-
-            $('#' + hotHotspot).addClass('hotspotC'); // Add .hotspotC to the hotspot corresponding to the current slideIndex
-            $('#' + hotHotspot).css({
-                'top': ogTop, 
-                'left': ogLeft
-            })
-        };
-
-        //Moving to california changes the backgound image
-        var anaheim = function() {
-            $('#image').css('transition', 'none'); // remove transition
-            // Set new background image
-            var imgURL = "images/CA_Anaheim_287970_1965_24000_geo.png";
-            // reset background scale and background align
-            $('#image').css({
-                "background-image": "url(" + imgURL +")",
-                "background-position": "right",
-                'transform': 'scale(1)' 
-            });
-            $('.hotspot').hide(); //TODO:: doesn't completely make the hotspots go away, shows up again when you resize window
-        };
-
-    </script>
-</body>
+        </script>
+        </body>
 </html>

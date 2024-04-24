@@ -1,55 +1,38 @@
 html,
 body {
   height: 100%;
-  padding: 0;
-  margin: 0;
+  padding: 5%;
+  margin: 5%;
+  /* font-family: "Playfair Display", serif; */
+  /* font-family: "Source Serif 4", serif; */
+  font-family: "Libre Bodoni", serif;
+  font-optical-sizing: auto;
+  /* font-weight: <weight>; */
+  font-style: normal;
+  background-color: black;
+  color: white;
+  overflow: hidden;
 }
-#image {
-  height: 100%;
-  width: 100%; 
-  background: url('images/CA_Anaheim_287970_1965_24000_geo.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: left;
-}
-.hotspot {
-  position: absolute;
-  z-index: 1;
-  background: red;
-  cursor: pointer;
-  display: inline-block;
-}
-.popup {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px;
-  z-index: 999;
-  width: 40%;
-  height: 70%;
-}
-.popup img {
-  max-width: 100%;
-  height: auto;
+p {
+  position: relative;
 }
 #contButton {
   z-index: 999;
-  display: none;
-  position: fixed;
-  position: fixed;
-  top: 50%; 
-  right: 20px;
-  transform: translateY(-50%);
-  background-color: blue;
+  display: block;
+  position: absolute;
+  bottom: 20%; 
+  right: 50%;
+  background-color: transparent; 
   color: white;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
+  border: 2px solid white;
+  font-family: "Libre Bodoni", serif;
 }
 #contButton:hover {
-  background-color: red;
+  background-color: white;
+  color: black;
+  /* border: 2px solid black; */
 }
