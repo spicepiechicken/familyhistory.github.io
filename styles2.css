@@ -1,38 +1,52 @@
 html,
 body {
-  height: 100%;
-  padding: 5%;
-  margin: 5%;
-  /* font-family: "Playfair Display", serif; */
-  /* font-family: "Source Serif 4", serif; */
-  font-family: "Libre Bodoni", serif;
-  font-optical-sizing: auto;
-  /* font-weight: <weight>; */
+  font-family: "SUSE", sans-serif;
+  
+  /* font-family: "Roboto Mono", monospace; */
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 340;
+  font-size: 1.05rem;
+  line-height: 1.13rem;
   font-style: normal;
-  background-color: black;
-  color: white;
-  overflow: hidden;
+  background: url('images/indexBG2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  height: 100%; /* Ensure body takes full height */
+  margin: 0; /* Remove default margin */
+
+  /* Center Items */
+  display: flex; /* Use flexbox */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+#elements{
+ text-align: center;
 }
 p {
-  position: relative;
+  width: 75%;
+  margin: auto;
+  background-color: transparent; 
+  color: #efebe3;
+  filter: drop-shadow(rgb(46, 46, 46) .12rem .1rem 5px);
 }
 #contButton {
   z-index: 999;
-  display: block;
   position: absolute;
-  bottom: 20%; 
-  right: 50%;
-  background-color: transparent; 
-  color: white;
-  border: none;
+  bottom: 20%; /* Adjust this percentage to position the button below the paragraph */
+  /* left: 50%;
+  transform: translate(-50%, -50%); */
+  background-color: transparent;
+  color: #f4f0ea;
   padding: 10px 20px;
+  /* margin: 50px; */
   cursor: pointer;
   border-radius: 5px;
-  border: 2px solid white;
-  font-family: "Libre Bodoni", serif;
+  color: #f4f0ea;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 200;
 }
 #contButton:hover {
-  background-color: white;
-  color: black;
-  /* border: 2px solid black; */
+  color: #f4f0ea;
+  color: rgb(131, 131, 131);
 }

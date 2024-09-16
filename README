@@ -1,0 +1,7 @@
+Each popup is organized as follows:
+    .popup
+        .titles
+                h3: Popup headings
+                h2: Popup subheadings
+        .bodies
+                .popupParagraphs

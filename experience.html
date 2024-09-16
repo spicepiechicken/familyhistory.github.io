@@ -13,34 +13,41 @@
 <body>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <div id='image'></div>
+        <!-- <button id="homeButton">Back to Home</button> -->
         <!-- Hidden popup divs for each hotspot -->
         <div id="popup_Pyongyang" class="popup">
             <div id="pyTitle" class="titles">
-                <img id="pyIMG2" src="images/joseph1.png" alt="">
-                <h3>Birthplace of Joseph Song</h3>
-                <h2>Hwanghae-do, Pyongyang, North Korea<br>1922-1944</h2>
+                <img class="profilePics joseph" src="images/joseph1.png" alt="">
+                <div class="names">
+                    <h3 class="headings">Birthplace of Joseph Song</h3>
+                    <h2 class="subheadings">Hwanghae-do, Pyongyang, North Korea<br>1922-1944</h2>
+                </div>
             </div>
             <div id="pyBody" class="bodies">
-                <p id="py1" class="popupParagraphs">The true date of my grandfather, Joseph's birthday is not known, 
-                    some say he was born in 1922 and some say it was 1926. We would celebrate his birthday on December 26th. </p>
-                <p id="py2" class="popupParagraphs">He was the oldest of 3 brothers in a family of wealthy, Christian farmers 
-                    in Hwanghae-do, Pyongyang in what is now North Korea. When Joseph was 13 years old, his father died of 
-                    appendicitis and he took over the responsibility of being the man of the household.
+                <p id="py1" class="popupParagraphs">The true date of my grandfather, Joseph's birthday is not known.
+                    Some say he was born in 1922 and others say it was 1926. All we know for sure is that we celebrate his birthday every year on December 26th. </p>
+                <p id="py2" class="popupParagraphs">He was born the oldest of 3 brothers in a family of wealthy, Christian farmers 
+                    residing in Hwanghae-do, Pyongyang in what is now North Korea. When Joseph was 13 years old, his father died of 
+                    appendicitis and he assumed the responsibility of being the man of the household.
                 </p>
                 <p id="py3" class="popupParagraphs">Around 1944, when the communists began to advance, Joseph was at work 
-                    as a teacher at the local school. Without any notice, a cousin and Joseph’s middle brother came to his 
-                    workplace in a stolen ambulance and told Joseph that they needed to leave immediately. The brothers were 
-                    quickly stowed away in the back of the ambulance and were forced to flee their hometown without the rest of the 
-                    family. My grandfather was around 18 years of age at the time and had a wife and three children. 
-                    He left without knowing if they were okay, or if he would ever see them again.</p>
-                <img id="pyIMG1" src="images/kidsPyongyang1930.jpeg" alt="Children playing in Pyongyang area, around 1930. Source: Photo Book of Pyongyang Diocese">
+                    as a teacher at the local school. Without any notice, Joseph's cousin and middle brother came to his 
+                    workplace in a stolen ambulance and told Joseph that they needed to leave immediately. The brothers 
+                    quickly stowed away in the back of the ambulance and fled their hometown forced to leave the rest of their family behind,
+                    not knowing if they were okay or if they would ever see them again. 
+                    My grandfather was around 18 years of age at the time and had a wife and three children. 
+                    </p>
             </div>
+            <img class="imgs pyIMG1" src="images/kidsPyongyang1930.jpeg" alt="Children playing in Pyongyang area, around 1930. Source: Photo Book of Pyongyang Diocese">
         </div>
+
         <div id="popup_Seoul" class="popup">
             <div id="seoulTitle" class="titles">
-                <img id="seoul2IMG" src="images/youngja1.png" alt="">
-                <h3>Birthplace of Young-Ja Song</h3>
-                <h2>Gyeongbokgung, Seoul, South Korea<br>1940-1945</h2>
+                <img class="profilePics" src="images/youngja1.png" alt="">
+                <div class="names">
+                    <h3 class="headings">Birthplace of Young-Ja Song</h3>
+                    <h2 class="subheadings">Gyeongbokgung, Seoul, South Korea<br>1940-1945</h2>
+                </div>
             </div>
             <div id="seoulBody" class="bodies">
                 <p id="seoul1" class="popupParagraphs"> My grandmother, Young-Ja, was born February 20th, 1940 in Seoul, South Korea. 
@@ -50,13 +57,15 @@
                     share with the community. At a time when the country was poor, she remembers her father 
                     constantly taking people in and sharing what they had.
                 </p>
-                <img id="seoul1IMG" src="images/seoul1940.jpg" alt="https://www.flickr.com/photos/dok1/106518783">
             </div>
+            <img class="imgs seoul1IMG" src="images/seoul1940.jpg" alt="https://www.flickr.com/photos/dok1/106518783">
         </div>
         <div id="popup_Busan" class="popup">
             <div id="busanTitle" class="titles">
-                <h3>The Flight South</h3>
-                <h2>Busan, South Korea<br>1945</h2>
+                <div class="names">
+                    <h3 class="headings">The Flight South</h3>
+                    <h2 class="subheadings">Busan, South Korea<br>1945</h2>
+                </div>
             </div>
             <div id="busanBody" class="bodies">
                 <p id="busan1" class="popupParagraphs">Once the Korean War started, almost everyone fled South towards Busan, away from the fighting,
@@ -68,14 +77,17 @@
                      They survived on burnt rice scraps, also referred to as nurungji, and other discarded food, 
                      hiding the bits of food in her clothes to eat later.
                 </p>
-                <img id="busan1IMG" src="images/ship.jpg" alt="">
-                <img id="busan2IMG" src="images/refugee.jpg" alt="">
             </div>
+            <img class="imgs busan1IMG" src="images/ship.jpg" alt="">
+            <img class="imgs busan2IMG" src="images/refugee.jpg" alt="">
         </div>
+
         <div id="popup_postWar" class="popup">
-            <div id="postWarTitle" class="titles">
-                <h3>After the War: Rebuilding and Grieving</h3>
-                <h2>Seoul, South Korea<br>1954-1971</h2>
+            <div id="postWarTitle">
+                <div class="names pWarNames">
+                    <h3 class="headings">After the War: Rebuilding and Grieving</h3>
+                    <h2 class="subheadings">Seoul, South Korea<br>1954-1971</h2>
+                </div>
             </div>
             <div id="postWarBody" class="bodies">
                 <p id="pwar1" class="popupParagraphs">One year after the war, Young-Ja returned to her home address, looking for her family. It was there that they 
@@ -87,24 +99,26 @@
                     Joseph's son, Daniel, was Young-Ja's student and adored her so much that he introduced them. 
                     They got married a few years later and began their life together.</p>
                 <p id="pwar3" class="popupParagraphs">Young-Ja and Joseph had three sons, ranging from oldest to youngest: John, Charles (or Charlie), and Samuel II (or Sam). </p>
-                <img id="pwar1IMG" src="images/famPic2.jpeg" alt="">
-                <img id="pwar2IMG" src="images/charJohn.jpeg" alt="">
-                <img id="pwar3IMG" src="images/bikes1.JPEG" alt="">
             </div>
+            <img class="imgs pwar1IMG" src="images/famPic2.jpeg" alt="">
+            <img class="imgs pwar2IMG" src="images/charJohn.jpeg" alt="">
+            <img class="imgs pwar3IMG" src="images/bikes1.JPEG" alt="">
         </div>
         <div id="popup_CA" class="popup">
-            <h3>Off to California!</h3>
+            <div class="names">
+                <h3 class="headings">Off to California!</h3>
+            </div>
             <p id="CA1" class="popupParagraphs">Joseph went a year earlier to California to set things up for the family. That meant that Young-Ja had to 
                 fly with three boys under the age of 5! The entire plane ride they were crawling under the seats and 
                 other passengers had to tell her where they were. And when they got to
                 customs all three boys ran away once again and she had to call over the intercom for them.
             </p>
-            <img id="CA1IMG" src="images/bikes2.JPEG" alt="">
-            <img id="CA2IMG" src="images/bikes3.JPEG" alt="">
+            <img class="imgs CA1IMG" src="images/bikes2.JPEG" alt="">
+            <img class="imgs CA2IMG" src="images/bikes3.JPEG" alt="">
         </div>
         <div id="popup_Anaheim" class="popup">
-            <h3 id="anaheimh3">Welcome to Anaheim</h3>
-            <p></p>
+            <h3 id="anaheimh3" class="headings">Welcome to Anaheim</h3>
+            <p id="comingSoon">More to come soon!</p>
             <img src="" alt="">
         </div>
         <button id="contButton">Continue</button>
@@ -137,12 +151,20 @@
                 numClicks: 0
             }, { 
                 id: 'Seoul',
-                x: 185,
-                y: 503,
+                x: 180,
+                y: 500,
                 height: 20,
                 width: 20,
                 numClicks: 0
             }
+            // , {
+            //     id: 'Cali',
+            //     x: 1670,
+            //     y: 540,
+            //     height: 20,
+            //     width: 20,
+            //     numClicks: 0
+            // }
         ];
         $(window).resize(function() {
             positionHotSpots();
@@ -184,18 +206,26 @@
                 var clickedHotspot = hotspots.find(function(hotspot) {
                         return hotspot.id === hotspotId;
                 });
-                if (!zoomed) {
-                        zoomed = true;
-                        zoomToHotspot(hotspotId);
-                } else {
-                    slideIndex = slides.indexOf(hotspotId); // get & store curr slide index 
+                // if (!zoomed) {    NO ZOOMING IN FOR NOW
+                //         zoomed = true;
+                //         zoomToHotspot(hotspotId);
+                // } else {
+                //     slideIndex = slides.indexOf(hotspotId); // get & store curr slide index 
+                //     console.log(slideIndex);
+                //     $('.popup').hide(); //close curr popup
+                //     $('#contButton').show(); // show the continue button
+                //     changeHotspotColor(hotspotId);
+                //     showSlide('popup_' + hotspotId);
+                //     clickedHotspot.numClicks++; // increment num clicks
+                // }
+
+                slideIndex = slides.indexOf(hotspotId); // get & store curr slide index 
                     console.log(slideIndex);
                     $('.popup').hide(); //close curr popup
                     $('#contButton').show(); // show the continue button
                     changeHotspotColor(hotspotId);
                     showSlide('popup_' + hotspotId);
                     clickedHotspot.numClicks++; // increment num clicks
-                }
             });
         };
 
@@ -228,6 +258,7 @@
         // Fade in and out
         function showSlide(slideId) {
             //Fade in popup
+            document.getElementById(slideId).style.display = "flex";
             $('#' + slideId).fadeIn().css('opacity', '100');
             $('#' + slideId).addClass('visible');
             // $('#' + hotspotId).addClass('show');
@@ -284,8 +315,8 @@
     var postWar = function() {
         $('.hotspot').each(function() {
             $(this).css({
-                    left: 125,
-                    top: 310
+                    left: 130,
+                    top: 300
             });
         });
     }
@@ -293,30 +324,29 @@
     var animate2CA = function() {
         document.getElementById("planeAudio").play(); //play sound
 
-        $('.hotspot').hide();
+        //$('.hotspot').hide();
         //move bg image
         //set transition property to animate transform changes
-        $('#image').css('transition', 'transform 15s ease-in-out');
+        //$('#image').css('transition', 'transform 15s ease-in-out');
         //move viewport to the rightmost part of the background image
-        var viewportWidth = $(window).width();
-        $('#image').css('transform', 'translateX(' + (- (viewportWidth * .77)) + 'px) scale(2)');       
+        // var viewportWidth = $(window).width();
+        // $('#image').css('transform', 'translateX(' + (- (viewportWidth * .77)) + 'px) scale(1)');       
 
         //animate airplane
         $('#airplane').show();
         $('#airplane').css('transition', 'transform 15s ease-in-out');
-        //move viewport to the rightmost part of the background image
         var viewportWidth = $(window).width();
         var viewportHeight = $(window).height();
         $('#airplane').css('transform', 'translateX(' + (viewportWidth / 1.3) + 'px) translateY(' + (viewportHeight * .07) + 'px)');      
-        // show hotspot after animation is finished
+        //fshow hotspot after animation is finished
             setTimeout(function() {
                 console.log("IN SET TIMEOUT");
                 $('.hotspot').show();
-                // Move the hotspots to their desired position
+                // Move the hotspots to their Anaheim position
                 $('.hotspot').each(function() {
                     $(this).css({
                         left: 1160,
-                        top: 370
+                        top: 335
                     });
                 });
                 $('#airplane').hide();
@@ -328,8 +358,8 @@
     var busan = function() {
         $('.hotspot').each(function() {
             $(this).css({
-                    left: 160,
-                    top: 360
+                    left: 140,
+                    top: 330
             });
         });
     }
@@ -412,52 +442,6 @@
             // Position hotspots on bg image
             positionHotSpots();
         }
-
-
-
-
-// // Start of: FROM CHAT GPT -- I DID NOT MAKE THIS
-// // All it does it make the stuff wiggle with the mouse
-// // Get all elements with the class 'wiggle-on-mouse-move'
-// const elementsToWiggle = document.querySelectorAll('.popup');
-
-// // Store the original position of each popup
-// const originalPositions = {};
-// elementsToWiggle.forEach(element => {
-//   const rect = element.getBoundingClientRect();
-//   originalPositions[element.id] = {
-//     top: rect.top + window.scrollY,
-//     left: rect.left + window.scrollX
-//   };
-// });
-
-// // Function to handle mouse move event
-// function handleMouseMove(event) {
-//   // Calculate the percentage to translate the element
-//   const translateXPercent = (event.clientX / window.innerWidth - 0.5) * 10; // Adjust the multiplier as needed
-//   const translateYPercent = (event.clientY / window.innerHeight - 0.5) * 10; // Adjust the multiplier as needed
-
-//   // Apply the translation to each element along with wiggle effect
-//   elementsToWiggle.forEach(element => {
-//     const originalPos = originalPositions[element.id];
-//     const newLeft = originalPos.left + (translateXPercent * 2); // Adjust the multiplier as needed
-//     const newTop = originalPos.top + (translateYPercent * 2); // Adjust the multiplier as needed
-    
-//     // Apply translation
-//     element.style.left = `${newLeft}px`;
-//     element.style.top = `${newTop}px`;
-
-//     // Apply wiggle effect
-//     const wiggleX = Math.sin(Date.now() / 100) * 5; // Adjust the multiplier as needed for intensity
-//     const wiggleY = Math.cos(Date.now() / 100) * 5; // Adjust the multiplier as needed for intensity
-//     element.style.transform = `translate(${newLeft + wiggleX}px, ${newTop + wiggleY}px)`;
-//   });
-// }
-
-//   // Add event listener for mouse move on the document
-//   document.addEventListener('mousemove', handleMouseMove);
-// // End of: FROM CHAT GPT -- I DID NOT MAKE THIS
-
     </script>
 </body>
 </html>
