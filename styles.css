@@ -8,11 +8,42 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
 }
+#homeButton {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;    
+  z-index: 900;
+  padding: 10px 20px; 
+  background-color: rgba(208, 223, 235, 0.202);
+  color: rgb(228, 228, 228);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease; 
+  cursor: pointer;
+}
+#homeButton:hover {
+  background-color: black;
+}
 /***** Background images ******/
 .imgs {
   opacity: 50%;
   position: absolute;
   z-index: -1;
+}
+/***** Opening Message ******/
+.messageContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#openingMessage {
+  opacity: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: white;
 }
 /***** Descriptions of Events (bodies) ******/
 .bodies {
@@ -162,10 +193,6 @@ body {
   text-align: right;
 }
 #image {
-  /* width: 1000px;
-  height: 1000px; */
-  /* width: 9728px;
-  height: 5288px; */
   height: 100%;
   width: 100%; 
   background: url('images/2Whole_world_-_land_and_oceans_12000.png');
@@ -353,7 +380,7 @@ body {
   top: 50%; 
   right: 4%;
   transform: translateY(-50%);
-  background-color: transparent; 
+  background-color: rgba(161, 173, 183, 0.202);; 
   color: white;
   border: none;
   padding: 10px 20px;

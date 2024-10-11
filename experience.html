@@ -10,11 +10,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Fredoka:wght@300..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Fredoka:wght@300..700&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="showMessage()">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <div id='image'></div>
-        <!-- <button id="homeButton">Back to Home</button> -->
+        <a href="index.html" id="homeButton">Back to Home</a>
         <!-- Hidden popup divs for each hotspot -->
+        <div class="messageContainer">
+            <div id="openingMessage">
+                <p id="click2begin">Click on a hotspot to begin.</p>
+             </div>
+        </div> 
         <div id="popup_Pyongyang" class="popup">
             <div id="pyTitle" class="titles">
                 <img class="profilePics joseph" src="images/joseph1.png" alt="">
@@ -131,6 +136,11 @@
         </div>
 
     <script>
+        var showMessage = function() {
+            $('#openingMessage').fadeIn(function () {
+                $(this).delay(4000).fadeOut().css('opacity', '0');
+            }).css('opacity', '100');
+        }
         var slides = ['Pyongyang', 'Seoul', 'Busan', 'postWar', 'CA', 'Anaheim', 'EXIT', 'DowntownA', 
                         'EastA'];
         var slideIndex = 0;
@@ -141,7 +151,6 @@
         var hotspotId = "";
         var Hx, Hy = 0; // used to zoom in on hotspots and zoom back out 
                         // when background changes to Anaheim
-        // var clickedHotspots = {}; // Keep track of how many times each hotspot has been clicked
         var hotspots = [{
                 id: 'Pyongyang',
                 x: 175,
@@ -157,14 +166,6 @@
                 width: 20,
                 numClicks: 0
             }
-            // , {
-            //     id: 'Cali',
-            //     x: 1670,
-            //     y: 540,
-            //     height: 20,
-            //     width: 20,
-            //     numClicks: 0
-            // }
         ];
         $(window).resize(function() {
             positionHotSpots();
@@ -199,26 +200,12 @@
                 });
                 $('body').append(hotspot);
             });
-
                 // CLICKING ON HOTSPOTS AND ZOOMING IN
                 $('.hotspot').click(function() {
                 hotspotId = $(this).attr('id');
                 var clickedHotspot = hotspots.find(function(hotspot) {
                         return hotspot.id === hotspotId;
                 });
-                // if (!zoomed) {    NO ZOOMING IN FOR NOW
-                //         zoomed = true;
-                //         zoomToHotspot(hotspotId);
-                // } else {
-                //     slideIndex = slides.indexOf(hotspotId); // get & store curr slide index 
-                //     console.log(slideIndex);
-                //     $('.popup').hide(); //close curr popup
-                //     $('#contButton').show(); // show the continue button
-                //     changeHotspotColor(hotspotId);
-                //     showSlide('popup_' + hotspotId);
-                //     clickedHotspot.numClicks++; // increment num clicks
-                // }
-
                 slideIndex = slides.indexOf(hotspotId); // get & store curr slide index 
                     console.log(slideIndex);
                     $('.popup').hide(); //close curr popup
@@ -257,11 +244,12 @@
 
         // Fade in and out
         function showSlide(slideId) {
+            //Hide opening message
+            $('#openingMessage').fadeOut().css('opacity', '0');
             //Fade in popup
             document.getElementById(slideId).style.display = "flex";
             $('#' + slideId).fadeIn().css('opacity', '100');
             $('#' + slideId).addClass('visible');
-            // $('#' + hotspotId).addClass('show');
         }
         function hideSlide(slideId) {
             //Fade out popup
@@ -323,14 +311,6 @@
 
     var animate2CA = function() {
         document.getElementById("planeAudio").play(); //play sound
-
-        //$('.hotspot').hide();
-        //move bg image
-        //set transition property to animate transform changes
-        //$('#image').css('transition', 'transform 15s ease-in-out');
-        //move viewport to the rightmost part of the background image
-        // var viewportWidth = $(window).width();
-        // $('#image').css('transform', 'translateX(' + (- (viewportWidth * .77)) + 'px) scale(1)');       
 
         //animate airplane
         $('#airplane').show();
@@ -438,7 +418,6 @@
                 numClicks: 0
             });
 
-            //$(".hotspot").css(background, "orange")
             // Position hotspots on bg image
             positionHotSpots();
         }
